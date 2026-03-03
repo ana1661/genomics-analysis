@@ -29,9 +29,9 @@ if st.button("Check for Cancer"):
             if response.status_code == 200:
                 result = response.json()
                 pred = result.get("prediction")
-                if pred == 0:
+                if pred == 1:
                     st.error("⚠️ The sample is predicted to be **Cancerous**.")
-                elif pred == 1:
+                elif pred == 0:
                     st.success("✅ The sample is predicted to be **Non-Cancerous**.")
                 else:
                     st.warning(f"Unexpected response: {result}")
